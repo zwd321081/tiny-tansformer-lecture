@@ -1,0 +1,36 @@
+day01_next_char.py
+  79e6f52afb8140b7 1-13
+progress.md
+  79e6f52afb8140b7 26,30,49
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.2.8-ntes.9",
+  "base_commit_sha": "b3e3a494266c513f381a8b6da684f2ead418ec6e",
+  "prompts": {
+    "79e6f52afb8140b7": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019ed99c-d490-7ca1-8433-946d8cf4b599",
+        "model": "gpt-5.5"
+      },
+      "human_author": "dongdongzhang",
+      "messages": [],
+      "total_additions": 17,
+      "total_deletions": 1,
+      "accepted_lines": 17,
+      "overriden_lines": 0,
+      "per_file_stats": {
+        "progress.md": {
+          "additions": 4,
+          "deletions": 1,
+          "accepted_lines": 4
+        },
+        "day01_next_char.py": {
+          "additions": 13,
+          "accepted_lines": 13
+        }
+      }
+    }
+  }
+}
