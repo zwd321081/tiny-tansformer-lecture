@@ -24,6 +24,7 @@ Stage 2: tensor and shape basics.
 - Passed Check 10: converted character training pairs into numeric training pairs.
 - Passed Check 11: understood 2D tensor shape and indexing.
 - Passed Check 12: separated dimension count from shape values.
+- Passed Check 13: verified tensor shape and indexing in PyTorch.
 
 ## Current Task
 

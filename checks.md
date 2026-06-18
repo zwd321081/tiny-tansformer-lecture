@@ -452,3 +452,37 @@ Status: passed.
 Reason:
 
 The number of dimensions is the number of numbers in `shape`. The value of each shape number is the length along that dimension.
+
+## Check 13: PyTorch tensor shape and indexing
+
+Code:
+
+```python
+example = torch.tensor([
+    [10, 20, 30],
+    [40, 50, 60],
+])
+
+print("example shape:", example.shape)
+print("example[1, 2]:", example[1, 2])
+```
+
+Prediction:
+
+```text
+example.shape = [2, 3]
+example[1, 2] = 60
+```
+
+Observed output:
+
+```text
+example shape: torch.Size([2, 3])
+example[1, 2]: tensor(60)
+```
+
+Status: passed.
+
+Reason:
+
+There are 2 rows and 3 columns. Row 1, column 2 is `60`.
