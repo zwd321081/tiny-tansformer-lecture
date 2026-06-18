@@ -423,3 +423,32 @@ Status: passed.
 Reason:
 
 The tensor has 2 rows and 4 columns. `batch[0, 2]` means row 0, column/index 2.
+
+## Check 12: dimensions versus shape values
+
+Code:
+
+```python
+a = [10, 20, 30]
+b = [
+    [10, 20, 30],
+]
+c = [
+    [10, 20, 30],
+    [40, 50, 60],
+]
+```
+
+Prediction:
+
+```text
+a: 1D, shape [3]
+b: 2D, shape [1, 3]
+c: 2D, shape [2, 3]
+```
+
+Status: passed.
+
+Reason:
+
+The number of dimensions is the number of numbers in `shape`. The value of each shape number is the length along that dimension.
