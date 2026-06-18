@@ -14,6 +14,7 @@ Stage 1: Python minimum basics.
 - Chose the learning rule: write core code by hand, use AI for explanation, hints, checking, and debugging.
 - Passed Check 01: predicted `sorted(list(set("banana")))`.
 - Passed Check 02: predicted `sorted(list(set("hello")))`.
+- Corrected Check 03: learned the direction difference between `stoi` and `itos`.
 
 ## Current Task
 
