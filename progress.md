@@ -12,6 +12,7 @@ Stage 1: Python minimum basics.
 
 - Created persistent learning project directory.
 - Chose the learning rule: write core code by hand, use AI for explanation, hints, checking, and debugging.
+- Passed Check 01: predicted `sorted(list(set("banana")))`.
 
 ## Current Task
 
@@ -34,6 +35,8 @@ Understand these Python concepts from the first exercise:
 - `for` loop
 
 Then implement `encode` and `decode` with small changes by hand.
+
+Also continue using `checks.md` to verify understanding with prediction, code changes, and reverse explanation.
 
 ## Notes For Next Session
 
