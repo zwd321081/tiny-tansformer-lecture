@@ -397,3 +397,29 @@ Status: passed.
 Reason:
 
 Each character is replaced by its integer from `stoi`, while the original order is preserved.
+
+## Check 11: 2D tensor shape and indexing
+
+Code:
+
+```python
+batch = torch.tensor([
+    [1, 0, 2, 2],
+    [0, 2, 2, 3],
+])
+```
+
+Prediction:
+
+```text
+batch.shape = (2, 4)
+batch[0] = [1, 0, 2, 2]
+batch[1] = [0, 2, 2, 3]
+batch[0, 2] = 2
+```
+
+Status: passed.
+
+Reason:
+
+The tensor has 2 rows and 4 columns. `batch[0, 2]` means row 0, column/index 2.

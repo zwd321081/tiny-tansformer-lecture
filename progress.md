@@ -22,6 +22,7 @@ Stage 2: tensor and shape basics.
 - Passed Check 08: understood `x = text[:-1]` and `y = text[1:]` as next-character training pairs.
 - Passed Check 09: produced next-character training pairs for `hello`.
 - Passed Check 10: converted character training pairs into numeric training pairs.
+- Passed Check 11: understood 2D tensor shape and indexing.
 
 ## Current Task
 
