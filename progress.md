@@ -16,6 +16,7 @@ Stage 1: Python minimum basics.
 - Passed Check 02: predicted `sorted(list(set("hello")))`.
 - Corrected Check 03: learned the direction difference between `stoi` and `itos`.
 - Corrected and passed Check 04: `encode` preserves input order and repeated characters.
+- Corrected and passed Check 05: `decode` maps integers back to characters and joins them into a string.
 
 ## Current Task
 

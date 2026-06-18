@@ -170,3 +170,62 @@ Expected result:
 ```
 
 Status: passed.
+
+## Check 05: `decode`
+
+Setup:
+
+```python
+chars = ['e', 'h', 'l', 'o']
+itos = {i: ch for i, ch in enumerate(chars)}
+
+def decode(ids):
+    chars_out = []
+    for i in ids:
+        chars_out.append(itos[i])
+    return "".join(chars_out)
+```
+
+Code A:
+
+```python
+print(decode([1, 0, 2, 2, 3]))
+```
+
+Initial prediction:
+
+```text
+['h','e','l','l','o']
+```
+
+Expected result:
+
+```text
+hello
+```
+
+Status: corrected.
+
+Reason:
+
+The intermediate `chars_out` is a list, but `decode` returns `"".join(chars_out)`, which is a string.
+
+Code B:
+
+```python
+print(decode([1, 3, 2, 0]))
+```
+
+Prediction:
+
+```text
+hole
+```
+
+Expected result:
+
+```text
+hole
+```
+
+Status: passed.
