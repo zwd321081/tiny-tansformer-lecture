@@ -6,7 +6,7 @@ Build Python and PyTorch foundations for learning Transformer from the top down.
 
 ## Current Stage
 
-Stage 2: tensor and shape basics.
+Stage 3: embedding basics.
 
 ## Completed
 
@@ -38,6 +38,7 @@ python3 day01_python_basics.py
 python3 day01_next_char.py
 uv run python day02_tensor_shapes.py
 uv run python day02_batch.py
+uv run python day03_embedding.py
 ```
 
 ## Next Step
@@ -63,6 +64,7 @@ Then understand:
 - how a Python list becomes a `torch.tensor`
 - what `shape` means
 - how 1D and 2D tensors are indexed
+- how `nn.Embedding` turns `[B, T]` token ids into `[B, T, C]` vectors
 
 ## Notes For Next Session
 
