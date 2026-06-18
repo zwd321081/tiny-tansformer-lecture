@@ -15,6 +15,7 @@ Stage 1: Python minimum basics.
 - Passed Check 01: predicted `sorted(list(set("banana")))`.
 - Passed Check 02: predicted `sorted(list(set("hello")))`.
 - Corrected Check 03: learned the direction difference between `stoi` and `itos`.
+- Corrected and passed Check 04: `encode` preserves input order and repeated characters.
 
 ## Current Task
 
