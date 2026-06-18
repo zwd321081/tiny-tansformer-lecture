@@ -542,3 +542,33 @@ Status: passed.
 Reason:
 
 `x` starts at index 2 and has length 4. `y` starts one position later and also has length 4.
+
+## Check 16: stacking samples into `[B, T]`
+
+Code:
+
+```python
+data = torch.tensor([1, 0, 2, 2, 3, 1, 2, 0])
+block_size = 3
+
+x1 = data[0:0+block_size]
+x2 = data[3:3+block_size]
+x = torch.stack([x1, x2])
+```
+
+Prediction:
+
+```text
+x1 = [1, 0, 2]
+x2 = [2, 3, 1]
+x = [[1, 0, 2], [2, 3, 1]]
+x.shape = [2, 3]
+B = 2
+T = 3
+```
+
+Status: passed.
+
+Reason:
+
+Each sample has length `T = 3`. Stacking 2 samples creates a 2D tensor with `B = 2`, so shape is `[2, 3]`.

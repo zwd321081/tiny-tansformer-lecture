@@ -27,6 +27,7 @@ Stage 2: tensor and shape basics.
 - Passed Check 13: verified tensor shape and indexing in PyTorch.
 - Passed Check 14: interpreted a 2D language model tensor as `[B, T]`.
 - Passed Check 15: sliced one `[T]` training sample and its next-token target from token data.
+- Passed Check 16: stacked multiple `[T]` samples into a `[B, T]` batch.
 
 ## Current Task
 
@@ -36,6 +37,7 @@ Run and understand the first Python exercises:
 python3 day01_python_basics.py
 python3 day01_next_char.py
 uv run python day02_tensor_shapes.py
+uv run python day02_batch.py
 ```
 
 ## Next Step
