@@ -24,3 +24,11 @@ In a new session, say:
 ```text
 Please read /Users/zwd321081/Documents/cloudmusic/projects/tiny-transformer-learning/README.md and progress.md, then continue teaching me tiny Transformer. Do not directly give full answers for core code.
 ```
+
+## Running Python
+
+Use `uv run` for PyTorch exercises:
+
+```bash
+uv run python day02_tensor_shapes.py
+```

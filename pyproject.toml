@@ -1,0 +1,9 @@
+[project]
+name = "tiny-transformer-learning"
+version = "0.1.0"
+description = "Top-down learning project for Python, PyTorch, and tiny Transformer."
+requires-python = ">=3.12,<3.13"
+dependencies = [
+    "numpy>=2.4.6",
+    "torch>=2.12.1",
+]
