@@ -515,3 +515,30 @@ Status: passed.
 Reason:
 
 For language model inputs, a 2D tensor is often read as `[B, T]`: `B` samples, each with `T` token ids.
+
+## Check 15: slicing one training sample from token data
+
+Code:
+
+```python
+data = torch.tensor([1, 0, 2, 2, 3, 1, 2, 0])
+block_size = 4
+
+x = data[2:2+block_size]
+y = data[3:3+block_size]
+```
+
+Prediction:
+
+```text
+x = [2, 2, 3, 1]
+y = [2, 3, 1, 2]
+x.shape = [4]
+y.shape = [4]
+```
+
+Status: passed.
+
+Reason:
+
+`x` starts at index 2 and has length 4. `y` starts one position later and also has length 4.
