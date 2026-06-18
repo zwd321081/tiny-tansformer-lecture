@@ -263,3 +263,32 @@ Answer:
 Changing `text` changes the character table and mappings. It does not change the later call to `encode("hello")`.
 
 Status: passed.
+
+## Check 07: encoding and decoding `transformer`
+
+Setup:
+
+```python
+text = "hello transformer"
+encoded = encode("transformer")
+decoded = decode(encoded)
+```
+
+Observed output:
+
+```text
+encoded: [11, 9, 1, 7, 10, 3, 8, 9, 6, 2, 9]
+decoded: transformer
+```
+
+Questions:
+
+1. Why does `r` appear three times as `9`?
+2. Why can `decoded` become `transformer` again?
+
+Answer:
+
+1. `transformer` contains three `r` characters, and `stoi['r']` is `9`.
+2. `decode` maps integers back to characters. The exact mapping is decided by `text`, which defines the vocabulary and `itos`.
+
+Status: passed.

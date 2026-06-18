@@ -24,7 +24,7 @@ def decode(ids):
     return "".join(chars_out)
 
 
-encoded = encode("hello")
+encoded = encode("transformer")
 decoded = decode(encoded)
 
 print("encoded:", encoded)
