@@ -25,6 +25,7 @@ Stage 2: tensor and shape basics.
 - Passed Check 11: understood 2D tensor shape and indexing.
 - Passed Check 12: separated dimension count from shape values.
 - Passed Check 13: verified tensor shape and indexing in PyTorch.
+- Passed Check 14: interpreted a 2D language model tensor as `[B, T]`.
 
 ## Current Task
 

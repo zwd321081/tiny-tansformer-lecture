@@ -486,3 +486,32 @@ Status: passed.
 Reason:
 
 There are 2 rows and 3 columns. Row 1, column 2 is `60`.
+
+## Check 14: `[B, T]` language model shape
+
+Code:
+
+```python
+x = torch.tensor([
+    [4, 2, 5, 5],
+    [11, 9, 1, 7],
+    [10, 3, 8, 9],
+])
+```
+
+Prediction:
+
+```text
+x.shape = [3, 4]
+B = 3
+T = 4
+sample 0 = [4, 2, 5, 5]
+sample 2 = [10, 3, 8, 9]
+x[2, 1] = 3
+```
+
+Status: passed.
+
+Reason:
+
+For language model inputs, a 2D tensor is often read as `[B, T]`: `B` samples, each with `T` token ids.
