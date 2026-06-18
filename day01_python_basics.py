@@ -1,4 +1,4 @@
-text = "hello world"
+text = "hello transformer"
 
 chars = sorted(list(set(text)))
 print("chars:", chars)

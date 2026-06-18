@@ -229,3 +229,37 @@ hole
 ```
 
 Status: passed.
+
+## Check 06: changing `text` versus changing `encode(...)`
+
+Task:
+
+Change:
+
+```python
+text = "hello world"
+```
+
+to:
+
+```python
+text = "hello transformer"
+```
+
+Observed output:
+
+```text
+chars: [' ', 'a', 'e', 'f', 'h', 'l', 'm', 'n', 'o', 'r', 's', 't']
+encoded: [4, 2, 5, 5, 8]
+decoded: hello
+```
+
+Question:
+
+Why does `encoded` / `decoded` still correspond to `"hello"`?
+
+Answer:
+
+Changing `text` changes the character table and mappings. It does not change the later call to `encode("hello")`.
+
+Status: passed.

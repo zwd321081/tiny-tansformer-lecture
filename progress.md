@@ -17,6 +17,7 @@ Stage 1: Python minimum basics.
 - Corrected Check 03: learned the direction difference between `stoi` and `itos`.
 - Corrected and passed Check 04: `encode` preserves input order and repeated characters.
 - Corrected and passed Check 05: `decode` maps integers back to characters and joins them into a string.
+- Passed Check 06: understood that `text` controls the vocabulary, while `encode("hello")` controls what gets encoded.
 
 ## Current Task
 
