@@ -358,3 +358,42 @@ Status: passed.
 Reason:
 
 `x` and `y` are offset by one character. Each character in `x` is paired with the next character from `y`.
+
+## Check 10: numeric next-character pairs
+
+Setup:
+
+```python
+text = "hello"
+chars = ['e', 'h', 'l', 'o']
+stoi = {'e': 0, 'h': 1, 'l': 2, 'o': 3}
+x = "hell"
+y = "ello"
+```
+
+Code:
+
+```python
+x_ids = [stoi[ch] for ch in x]
+y_ids = [stoi[ch] for ch in y]
+```
+
+Prediction:
+
+```text
+x_ids = [1, 0, 2, 2]
+y_ids = [0, 2, 2, 3]
+```
+
+Expected result:
+
+```text
+x_ids = [1, 0, 2, 2]
+y_ids = [0, 2, 2, 3]
+```
+
+Status: passed.
+
+Reason:
+
+Each character is replaced by its integer from `stoi`, while the original order is preserved.

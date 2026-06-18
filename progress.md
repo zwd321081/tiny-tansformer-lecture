@@ -21,6 +21,7 @@ Stage 1: Python minimum basics.
 - Passed Check 07: explained repeated encoded values and how `decode` reconstructs `transformer`.
 - Passed Check 08: understood `x = text[:-1]` and `y = text[1:]` as next-character training pairs.
 - Passed Check 09: produced next-character training pairs for `hello`.
+- Passed Check 10: converted character training pairs into numeric training pairs.
 
 ## Current Task
 
