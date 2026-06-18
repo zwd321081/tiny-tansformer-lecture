@@ -29,3 +29,31 @@ Status: passed.
 Reason:
 
 `set(text)` removes duplicate characters. `sorted(...)` sorts the remaining characters.
+
+## Check 02: repeated character removal
+
+Code:
+
+```python
+text = "hello"
+chars = sorted(list(set(text)))
+print(chars)
+```
+
+Prediction:
+
+```text
+['e', 'h', 'l', 'o']
+```
+
+Expected result:
+
+```text
+['e', 'h', 'l', 'o']
+```
+
+Status: passed.
+
+Reason:
+
+The second `l` is removed by `set(text)`, then the unique characters are sorted.
