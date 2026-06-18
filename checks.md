@@ -572,3 +572,69 @@ Status: passed.
 Reason:
 
 Each sample has length `T = 3`. Stacking 2 samples creates a 2D tensor with `B = 2`, so shape is `[2, 3]`.
+
+## Check 17: embedding output shape
+
+Code A:
+
+```python
+x = torch.tensor([
+    [1, 0, 2],
+    [2, 3, 1],
+])
+vocab_size = 4
+n_embd = 5
+embedding = nn.Embedding(vocab_size, n_embd)
+out = embedding(x)
+```
+
+Initial prediction:
+
+```text
+x.shape = [2, 3]
+embedding.weight.shape = unknown
+out.shape = [4, 5]
+out[0, 0] = first value of the weight matrix
+```
+
+Expected result:
+
+```text
+x.shape = [2, 3]
+embedding.weight.shape = [4, 5]
+out.shape = [2, 3, 5]
+out[0, 0] is a 5-number vector
+```
+
+Status: corrected.
+
+Reason:
+
+`embedding.weight` is the lookup table. `out = embedding(x)` keeps the `[B, T]` positions and replaces each token id with a length-`C` vector.
+
+Code B:
+
+```python
+x = torch.tensor([
+    [2, 0],
+])
+vocab_size = 3
+n_embd = 4
+embedding = nn.Embedding(vocab_size, n_embd)
+out = embedding(x)
+```
+
+Prediction:
+
+```text
+x.shape = [1, 2]
+embedding.weight.shape = [3, 4]
+out.shape = [1, 2, 4]
+out[0, 0] == embedding.weight[2]
+```
+
+Status: passed.
+
+Reason:
+
+`x[0, 0]` is token id `2`, so `out[0, 0]` is the vector from row `2` of the embedding table.
