@@ -322,3 +322,39 @@ Status: passed.
 Reason:
 
 `x` removes the last character. `y` removes the first character, so each position in `x` lines up with the next character in `y`.
+
+## Check 09: next-character pairs for `hello`
+
+Task:
+
+Change:
+
+```python
+text = "transformer"
+```
+
+to:
+
+```python
+text = "hello"
+```
+
+Observed output:
+
+```text
+text: hello
+x: hell
+y: ello
+
+training pairs:
+h -> e
+e -> l
+l -> l
+l -> o
+```
+
+Status: passed.
+
+Reason:
+
+`x` and `y` are offset by one character. Each character in `x` is paired with the next character from `y`.

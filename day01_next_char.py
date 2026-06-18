@@ -1,4 +1,4 @@
-text = "transformer"
+text = "hello"
 
 x = text[:-1]
 y = text[1:]
