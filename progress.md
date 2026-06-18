@@ -19,6 +19,7 @@ Stage 1: Python minimum basics.
 - Corrected and passed Check 05: `decode` maps integers back to characters and joins them into a string.
 - Passed Check 06: understood that `text` controls the vocabulary, while `encode("hello")` controls what gets encoded.
 - Passed Check 07: explained repeated encoded values and how `decode` reconstructs `transformer`.
+- Passed Check 08: understood `x = text[:-1]` and `y = text[1:]` as next-character training pairs.
 
 ## Current Task
 

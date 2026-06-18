@@ -292,3 +292,33 @@ Answer:
 2. `decode` maps integers back to characters. The exact mapping is decided by `text`, which defines the vocabulary and `itos`.
 
 Status: passed.
+
+## Check 08: next-character training target
+
+Code:
+
+```python
+text = "transformer"
+x = text[:-1]
+y = text[1:]
+```
+
+Prediction:
+
+```text
+x = transforme
+y = ransformer
+```
+
+Expected result:
+
+```text
+x = transforme
+y = ransformer
+```
+
+Status: passed.
+
+Reason:
+
+`x` removes the last character. `y` removes the first character, so each position in `x` lines up with the next character in `y`.
