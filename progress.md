@@ -23,10 +23,11 @@ Stage 1: Python minimum basics.
 
 ## Current Task
 
-Run and understand the first Python exercise:
+Run and understand the first Python exercises:
 
 ```bash
 python3 day01_python_basics.py
+python3 day01_next_char.py
 ```
 
 ## Next Step
@@ -44,6 +45,8 @@ Understand these Python concepts from the first exercise:
 Then implement `encode` and `decode` with small changes by hand.
 
 Also continue using `checks.md` to verify understanding with prediction, code changes, and reverse explanation.
+
+After that, connect `day01_next_char.py` to numeric encoding, so training pairs become integer pairs.
 
 ## Notes For Next Session
 
