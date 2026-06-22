@@ -1235,3 +1235,28 @@ Status: passed.
 Reason:
 
 `q @ k.T` creates pairwise position scores `[T, T]`. `weights @ v` aggregates values and returns `[T, value_dim]`.
+
+## Check 39: minimal Q/K/V attention chain
+
+Setup:
+
+```text
+q.shape = [5, 6]
+k.shape = [5, 6]
+v.shape = [5, 8]
+```
+
+Answer:
+
+```text
+scores.shape = [5, 5]
+mask.shape = [5, 5]
+weights.shape = [5, 5]
+out.shape = [5, 8]
+```
+
+Status: passed.
+
+Reason:
+
+The sequence length is `T = 5`, so scores, mask, and weights are `[T, T]`. The output keeps the sequence length and value dimension, `[T, value_dim]`.

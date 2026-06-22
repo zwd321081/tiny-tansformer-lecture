@@ -50,6 +50,7 @@ Stage 6: causal mask and attention prep.
 - Corrected Check 36: understood masked softmax weights and that softmax amplifies larger scores.
 - Corrected Check 37: understood `weights @ values` performs weighted sums row by row.
 - Corrected and passed Check 38: understood Q/K/V attention shapes.
+- Passed Check 39: understood the minimal Q/K/V attention chain shapes.
 
 ## Current Task
 
