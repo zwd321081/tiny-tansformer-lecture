@@ -638,3 +638,37 @@ Status: passed.
 Reason:
 
 `x[0, 0]` is token id `2`, so `out[0, 0]` is the vector from row `2` of the embedding table.
+
+## Check 18: embedding coordinates versus token ids
+
+Code:
+
+```python
+x = torch.tensor([
+    [3, 5, 3],
+    [0, 9, 1],
+])
+embedding = nn.Embedding(10, 6)
+out = embedding(x)
+```
+
+Prediction:
+
+```text
+x.shape = [2, 3]
+out.shape = [2, 3, 6]
+out[0, 0] uses embedding.weight row 3
+out[0, 2] uses embedding.weight row 3
+```
+
+Status: corrected.
+
+Reason:
+
+`[0, 0]` is a coordinate. `x[0, 0]` is the token id at that coordinate. `out[0, 0]` is the embedding vector looked up from that token id.
+
+Core formula:
+
+```python
+out[b, t] == embedding.weight[x[b, t]]
+```
