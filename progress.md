@@ -61,6 +61,7 @@ uv run python day04_cross_entropy.py
 uv run python day04_language_model_loss.py
 uv run python day05_bigram_model.py
 uv run python day05_bigram_train.py
+uv run python day05_bigram_generate.py
 ```
 
 ## Next Step
@@ -95,6 +96,7 @@ Then understand:
 - how language model loss flattens `[B, T, V]` logits and `[B, T]` targets
 - how a Bigram model maps token ids directly to next-token logits
 - how `zero_grad`, `backward`, and `optimizer.step` reduce loss
+- how a language model generates one token at a time
 
 ## Notes For Next Session
 
