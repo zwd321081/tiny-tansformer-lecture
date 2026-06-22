@@ -6,7 +6,7 @@ Build Python and PyTorch foundations for learning Transformer from the top down.
 
 ## Current Stage
 
-Stage 5: bigram model basics.
+Stage 6: causal mask and attention prep.
 
 ## Completed
 
@@ -66,6 +66,7 @@ uv run python day04_language_model_loss.py
 uv run python day05_bigram_model.py
 uv run python day05_bigram_train.py
 uv run python day05_bigram_generate.py
+uv run python day06_causal_mask.py
 ```
 
 ## Next Step
@@ -101,6 +102,7 @@ Then understand:
 - how a Bigram model maps token ids directly to next-token logits
 - how `zero_grad`, `backward`, and `optimizer.step` reduce loss
 - how a language model generates one token at a time
+- how causal masks prevent positions from attending to future tokens
 
 ## Notes For Next Session
 
