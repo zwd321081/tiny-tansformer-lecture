@@ -43,6 +43,7 @@ uv run python day02_tensor_shapes.py
 uv run python day02_batch.py
 uv run python day03_embedding.py
 uv run python day03_embedding_lookup.py
+uv run python day03_position_embedding.py
 ```
 
 ## Next Step
@@ -70,6 +71,7 @@ Then understand:
 - how 1D and 2D tensors are indexed
 - how `nn.Embedding` turns `[B, T]` token ids into `[B, T, C]` vectors
 - how `out[b, t] == embedding.weight[x[b, t]]`
+- how token embeddings and position embeddings are added
 
 ## Notes For Next Session
 
