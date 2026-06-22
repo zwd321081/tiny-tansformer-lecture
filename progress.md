@@ -50,6 +50,7 @@ uv run python day03_embedding.py
 uv run python day03_embedding_lookup.py
 uv run python day03_position_embedding.py
 uv run python day04_linear_logits.py
+uv run python day04_softmax.py
 ```
 
 ## Next Step
@@ -79,6 +80,7 @@ Then understand:
 - how `out[b, t] == embedding.weight[x[b, t]]`
 - how token embeddings and position embeddings are added
 - how `nn.Linear` turns `[B, T, C]` into `[B, T, vocab_size]` logits
+- how softmax turns logits into probabilities
 
 ## Notes For Next Session
 
