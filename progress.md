@@ -48,6 +48,7 @@ Stage 6: causal mask and attention prep.
 - Corrected and passed Check 34: understood causal mask is a full `T x T` matrix.
 - Corrected Check 35: understood `masked_scores` keeps score shape and original visible scores, replacing only masked positions with `-inf`.
 - Corrected Check 36: understood masked softmax weights and that softmax amplifies larger scores.
+- Corrected Check 37: understood `weights @ values` performs weighted sums row by row.
 
 ## Current Task
 
@@ -69,6 +70,7 @@ uv run python day05_bigram_model.py
 uv run python day05_bigram_train.py
 uv run python day05_bigram_generate.py
 uv run python day06_causal_mask.py
+uv run python day06_weighted_values.py
 ```
 
 ## Next Step
@@ -105,6 +107,7 @@ Then understand:
 - how `zero_grad`, `backward`, and `optimizer.step` reduce loss
 - how a language model generates one token at a time
 - how causal masks prevent positions from attending to future tokens
+- how attention weights aggregate values with `weights @ values`
 
 ## Notes For Next Session
 

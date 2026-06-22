@@ -1163,3 +1163,33 @@ Status: corrected.
 Reason:
 
 `-inf` becomes probability `0`. Equal visible scores split probability equally. Softmax is not simple proportional scaling; it exponentiates scores, so larger scores get amplified.
+
+## Check 37: attention weights times values
+
+Setup:
+
+```text
+weights:
+[
+  [1.0, 0.0, 0.0],
+  [0.5, 0.5, 0.0],
+  [0.2, 0.3, 0.5],
+]
+
+values:
+[4, 10, 20]
+```
+
+Answer:
+
+```text
+row 0 output = 4
+row 1 output = 7
+row 2 output = 13.8
+```
+
+Status: corrected.
+
+Reason:
+
+Each row first multiplies weights by values elementwise, then sums the row. Matrix multiplication `weights @ values` performs this weighted sum.
