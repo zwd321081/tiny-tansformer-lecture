@@ -42,6 +42,7 @@ Stage 5: bigram model basics.
 - Corrected Check 28: separated `B*T` prediction tasks from `V` candidate token scores.
 - Corrected Check 29: separated Bigram embedding table shape `[V, V]` from logits shape `[B, T, V]`.
 - Passed Check 30: observed Bigram loss decreasing and weights changing after training.
+- Corrected Check 31: understood generation uses `logits[:, -1, :]` with shape `[B, V]`.
 
 ## Current Task
 

@@ -980,3 +980,27 @@ Status: passed.
 Reason:
 
 The loss decreases during training, and `token_embedding_table.weight` changes before versus after training. This shows `backward()` computed gradients and `optimizer.step()` updated the parameters.
+
+## Check 31: generation uses the last position logits
+
+Setup:
+
+```python
+idx = torch.tensor([[1, 2, 3]])
+vocab_size = 4
+logits = token_embedding_table(idx)
+```
+
+Answer:
+
+```text
+idx.shape = [1, 3]
+logits.shape = [1, 3, 4]
+logits[:, -1, :].shape = [1, 4]
+```
+
+Status: corrected.
+
+Reason:
+
+`logits[:, -1, :]` keeps all batch rows, selects the last time position, and keeps all vocabulary scores. Training uses all positions; generation only needs the last position to predict the next token.
