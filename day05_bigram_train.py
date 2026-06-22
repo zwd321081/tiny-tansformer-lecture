@@ -4,15 +4,19 @@ import torch.nn.functional as F
 
 torch.manual_seed(1337)
 
-x = torch.tensor([
-    [1, 0, 2],
-    [2, 3, 1],
-])
+x = torch.tensor(
+    [
+        [1, 0, 2],
+        [2, 3, 1],
+    ]
+)
 
-targets = torch.tensor([
-    [0, 2, 2],
-    [3, 1, 2],
-])
+targets = torch.tensor(
+    [
+        [0, 2, 2],
+        [3, 1, 2],
+    ]
+)
 
 B, T = x.shape
 vocab_size = 4
@@ -28,6 +32,9 @@ def compute_loss():
     return F.cross_entropy(flat_logits, flat_targets)
 
 
+print("weight before:")
+print(token_embedding_table.weight)
+print()
 for step in range(51):
     loss = compute_loss()
 
@@ -37,3 +44,7 @@ for step in range(51):
 
     if step % 10 == 0:
         print("step:", step, "loss:", loss.item())
+
+print()
+print("weight after:")
+print(token_embedding_table.weight)

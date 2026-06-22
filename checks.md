@@ -965,3 +965,18 @@ Status: corrected.
 Reason:
 
 The embedding table shape is `[vocab_size, vocab_size]`. Applying it to `x` keeps the `[B, T]` positions and adds a final vocabulary-score dimension, producing `[B, T, vocab_size]`.
+
+## Check 30: Bigram training updates parameters
+
+Observed:
+
+```text
+step: 0 loss: 1.8651
+step: 50 loss: 0.4817
+```
+
+Status: passed.
+
+Reason:
+
+The loss decreases during training, and `token_embedding_table.weight` changes before versus after training. This shows `backward()` computed gradients and `optimizer.step()` updated the parameters.
