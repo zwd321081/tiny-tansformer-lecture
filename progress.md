@@ -46,6 +46,7 @@ Stage 6: causal mask and attention prep.
 - Corrected Check 32: understood `logits[b, t]` is a vocabulary score vector and `logits[b, t, token_id]` is one token's score.
 - Passed Check 33: understood causal visibility for self-attention.
 - Corrected and passed Check 34: understood causal mask is a full `T x T` matrix.
+- Corrected Check 35: understood `masked_scores` keeps score shape and original visible scores, replacing only masked positions with `-inf`.
 
 ## Current Task
 

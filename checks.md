@@ -1108,3 +1108,31 @@ Answer:
 ```
 
 Status: passed.
+
+## Check 35: mask keeps scores shape and values
+
+Code:
+
+```python
+scores = torch.tensor([
+    [10.0, 20.0],
+    [30.0, 40.0],
+])
+mask = torch.tensor([
+    [1, 0],
+    [1, 1],
+])
+masked_scores = scores.masked_fill(mask == 0, float("-inf"))
+```
+
+Answer:
+
+```text
+masked_scores = [[10.0, -inf], [30.0, 40.0]]
+```
+
+Status: corrected.
+
+Reason:
+
+`masked_scores` has the same shape as `scores`. `mask == 1` keeps the original score; `mask == 0` replaces the score with `-inf`.
