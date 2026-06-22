@@ -1,0 +1,35 @@
+day04_language_model_loss.py
+  79e6f52afb8140b7 1-37
+progress.md
+  79e6f52afb8140b7 57,89
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.2.8-ntes.9",
+  "base_commit_sha": "7ae7818d117da77bee65c72c7d1ec748b079c80a",
+  "prompts": {
+    "79e6f52afb8140b7": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019ed99c-d490-7ca1-8433-946d8cf4b599",
+        "model": "gpt-5.5"
+      },
+      "human_author": "dongdongzhang",
+      "messages": [],
+      "total_additions": 39,
+      "total_deletions": 0,
+      "accepted_lines": 39,
+      "overriden_lines": 0,
+      "per_file_stats": {
+        "day04_language_model_loss.py": {
+          "additions": 37,
+          "accepted_lines": 37
+        },
+        "progress.md": {
+          "additions": 2,
+          "accepted_lines": 2
+        }
+      }
+    }
+  }
+}
