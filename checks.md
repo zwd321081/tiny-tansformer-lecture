@@ -1336,3 +1336,26 @@ Status: passed.
 Reason:
 
 The linear layers map the last dimension from `n_embd` to `head_size`. Attention scores and weights are pairwise time-to-time matrices `[B, T, T]`. The output keeps the value dimension `head_size`.
+
+## Check 43: multi-head concat shape
+
+Setup:
+
+```text
+x.shape = [2, 5, 16]
+n_head = 4
+head_size = 6
+```
+
+Answer:
+
+```text
+each head output = [2, 5, 6]
+concat output = [2, 5, 24]
+```
+
+Status: passed.
+
+Reason:
+
+Heads are concatenated along the last dimension, so the final dimension is `n_head * head_size`.

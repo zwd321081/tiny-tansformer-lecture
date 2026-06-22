@@ -54,6 +54,7 @@ Stage 6: causal mask and attention prep.
 - Corrected Check 40: understood batched Q/K/V shapes, value dimension in `out`, and mask shape `[T, T]`.
 - Corrected Check 41: understood scores are divided by `sqrt(head_size)`.
 - Passed Check 42: understood single `Head` shape flow.
+- Passed Check 43: understood multi-head attention concatenates head outputs on the last dimension.
 
 ## Current Task
 
