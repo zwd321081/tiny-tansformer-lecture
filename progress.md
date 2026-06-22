@@ -47,6 +47,7 @@ Stage 6: causal mask and attention prep.
 - Passed Check 33: understood causal visibility for self-attention.
 - Corrected and passed Check 34: understood causal mask is a full `T x T` matrix.
 - Corrected Check 35: understood `masked_scores` keeps score shape and original visible scores, replacing only masked positions with `-inf`.
+- Corrected Check 36: understood masked softmax weights and that softmax amplifies larger scores.
 
 ## Current Task
 

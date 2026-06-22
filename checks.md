@@ -1136,3 +1136,30 @@ Status: corrected.
 Reason:
 
 `masked_scores` has the same shape as `scores`. `mask == 1` keeps the original score; `mask == 0` replaces the score with `-inf`.
+
+## Check 36: masked scores to attention weights
+
+Code:
+
+```python
+masked_scores = torch.tensor([
+    [2.0, -inf, -inf],
+    [2.0, 2.0, -inf],
+    [1.0, 2.0, 5.0],
+])
+weights = softmax(masked_scores, dim=-1)
+```
+
+Answer:
+
+```text
+first row is [1, 0, 0]
+second row is [0.5, 0.5, 0]
+third row has the largest probability at index 2
+```
+
+Status: corrected.
+
+Reason:
+
+`-inf` becomes probability `0`. Equal visible scores split probability equally. Softmax is not simple proportional scaling; it exponentiates scores, so larger scores get amplified.
