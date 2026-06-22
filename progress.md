@@ -6,7 +6,7 @@ Build Python and PyTorch foundations for learning Transformer from the top down.
 
 ## Current Stage
 
-Stage 4: linear logits basics.
+Stage 5: bigram model basics.
 
 ## Completed
 
@@ -57,6 +57,7 @@ uv run python day04_linear_logits.py
 uv run python day04_softmax.py
 uv run python day04_cross_entropy.py
 uv run python day04_language_model_loss.py
+uv run python day05_bigram_model.py
 ```
 
 ## Next Step
@@ -89,6 +90,7 @@ Then understand:
 - how softmax turns logits into probabilities
 - how cross entropy compares logits against the target token id
 - how language model loss flattens `[B, T, V]` logits and `[B, T]` targets
+- how a Bigram model maps token ids directly to next-token logits
 
 ## Notes For Next Session
 
