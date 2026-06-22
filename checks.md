@@ -738,3 +738,28 @@ Status: corrected.
 Reason:
 
 `T` is the sequence length. `positions` is a 1D tensor of position ids `[0, 1, 2]`; after position embedding it becomes `[T, C]`.
+
+## Check 21: same token at different positions
+
+Code:
+
+```python
+x = torch.tensor([
+    [2, 1, 2],
+])
+
+combined[0, 0] = token_vectors[0, 0] + position_vectors[0]
+combined[0, 2] = token_vectors[0, 2] + position_vectors[2]
+```
+
+Prediction:
+
+```text
+combined[0, 0] and combined[0, 2] are different.
+```
+
+Status: passed.
+
+Reason:
+
+The token vectors are the same because both token ids are `2`, but the position vectors are different: position `0` versus position `2`.
