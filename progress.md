@@ -33,6 +33,7 @@ Stage 3: embedding basics.
 - Passed Check 19: verified embedding lookup at coordinate `[1, 1]`.
 - Corrected Check 20: understood position ids, position vector shape, and `combined[b, t] = token_vectors[b, t] + position_vectors[t]`.
 - Passed Check 21: understood why the same token gets different combined vectors at different positions.
+- Corrected Check 22: understood same token and same position across different batch rows gives the same combined vector.
 
 ## Current Task
 

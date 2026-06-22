@@ -763,3 +763,32 @@ Status: passed.
 Reason:
 
 The token vectors are the same because both token ids are `2`, but the position vectors are different: position `0` versus position `2`.
+
+## Check 22: same token at the same position across batches
+
+Code:
+
+```python
+x = torch.tensor([
+    [2, 1, 0],
+    [0, 1, 2],
+])
+```
+
+Question:
+
+```text
+Are combined[0, 1] and combined[1, 1] the same?
+```
+
+Answer:
+
+```text
+Yes.
+```
+
+Status: corrected.
+
+Reason:
+
+Both positions contain token id `1`, so both token vectors come from `token_embedding.weight[1]`. Both are at position `t = 1`, so both add `position_vectors[1]`. The batch index `b` does not change the position vector.
