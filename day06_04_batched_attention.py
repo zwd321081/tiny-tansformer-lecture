@@ -19,7 +19,7 @@ q = query(x)
 k = key(x)
 v = value(x)
 
-scores = q @ k.transpose(-2, -1)
+scores = q @ k.transpose(-2, -1) * head_size**-0.5
 mask = torch.tril(torch.ones(T, T))
 masked_scores = scores.masked_fill(mask == 0, float("-inf"))
 weights = F.softmax(masked_scores, dim=-1)

@@ -1287,3 +1287,26 @@ Status: corrected.
 Reason:
 
 `out = weights @ v` keeps the value dimension, so the last dimension is `head_size`. The causal mask only describes time-to-time visibility, so it is `[T, T]`.
+
+## Check 41: scaled attention scores
+
+Question:
+
+```text
+head_size = 64
+sqrt(head_size) = ?
+scores should be divided by ?
+```
+
+Answer:
+
+```text
+sqrt(64) = 8
+scores should be divided by 8
+```
+
+Status: corrected.
+
+Reason:
+
+Attention scores are scaled by `1 / sqrt(head_size)` to keep softmax from becoming too sharp when the key/query dimension is large.

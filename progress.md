@@ -52,6 +52,7 @@ Stage 6: causal mask and attention prep.
 - Corrected and passed Check 38: understood Q/K/V attention shapes.
 - Passed Check 39: understood the minimal Q/K/V attention chain shapes.
 - Corrected Check 40: understood batched Q/K/V shapes, value dimension in `out`, and mask shape `[T, T]`.
+- Corrected Check 41: understood scores are divided by `sqrt(head_size)`.
 
 ## Current Task
 
