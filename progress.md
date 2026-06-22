@@ -44,6 +44,7 @@ Stage 5: bigram model basics.
 - Passed Check 30: observed Bigram loss decreasing and weights changing after training.
 - Corrected Check 31: understood generation uses `logits[:, -1, :]` with shape `[B, V]`.
 - Corrected Check 32: understood `logits[b, t]` is a vocabulary score vector and `logits[b, t, token_id]` is one token's score.
+- Passed Check 33: understood causal visibility for self-attention.
 
 ## Current Task
 

@@ -1041,3 +1041,26 @@ Status: corrected.
 Reason:
 
 `logits[b, t]` is a vector over the vocabulary. A specific token score is `logits[b, t, token_id]`.
+
+## Check 33: causal visibility
+
+Setup:
+
+```text
+sequence = [A, B, C, D]
+```
+
+Answer:
+
+```text
+position 0 can see A
+position 1 can see A, B
+position 2 can see A, B, C
+position 3 can see A, B, C, D
+```
+
+Status: passed.
+
+Reason:
+
+In a causal language model, each position can see itself and the past, but not future tokens.
