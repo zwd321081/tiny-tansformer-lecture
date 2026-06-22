@@ -54,6 +54,7 @@ uv run python day03_position_embedding.py
 uv run python day04_linear_logits.py
 uv run python day04_softmax.py
 uv run python day04_cross_entropy.py
+uv run python day04_language_model_loss.py
 ```
 
 ## Next Step
@@ -85,6 +86,7 @@ Then understand:
 - how `nn.Linear` turns `[B, T, C]` into `[B, T, vocab_size]` logits
 - how softmax turns logits into probabilities
 - how cross entropy compares logits against the target token id
+- how language model loss flattens `[B, T, V]` logits and `[B, T]` targets
 
 ## Notes For Next Session
 
