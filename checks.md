@@ -888,3 +888,29 @@ Status: corrected.
 Reason:
 
 The candidate token ids are `0`, `1`, and `2`, but `target[0] = 2` selects token id `2` as the correct answer. Cross entropy is large because the model gives the correct token a low score and therefore a low probability.
+
+## Check 27: flatten language model logits for loss
+
+Setup:
+
+```python
+logits.shape = [4, 8, 10]
+targets.shape = [4, 8]
+```
+
+Prediction:
+
+```text
+B = 4
+T = 8
+V = 10
+B*T = 32
+flat_logits.shape = [32, 10]
+flat_targets.shape = [32]
+```
+
+Status: passed.
+
+Reason:
+
+Language model loss treats each `[b, t]` position as one prediction task. Flattening combines `B*T` positions while keeping the vocabulary dimension `V`.
