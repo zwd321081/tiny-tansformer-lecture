@@ -1,0 +1,36 @@
+day05_bigram_model.py
+  79e6f52afb8140b7 1-33
+progress.md
+  79e6f52afb8140b7 9,60,93
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.2.8-ntes.9",
+  "base_commit_sha": "f932e434c397f35a46c737fec5695f0e95825db0",
+  "prompts": {
+    "79e6f52afb8140b7": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019ed99c-d490-7ca1-8433-946d8cf4b599",
+        "model": "gpt-5.5"
+      },
+      "human_author": "dongdongzhang",
+      "messages": [],
+      "total_additions": 36,
+      "total_deletions": 1,
+      "accepted_lines": 36,
+      "overriden_lines": 0,
+      "per_file_stats": {
+        "day05_bigram_model.py": {
+          "additions": 33,
+          "accepted_lines": 33
+        },
+        "progress.md": {
+          "additions": 3,
+          "deletions": 1,
+          "accepted_lines": 3
+        }
+      }
+    }
+  }
+}
