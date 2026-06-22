@@ -34,6 +34,8 @@ Stage 4: linear logits basics.
 - Corrected Check 20: understood position ids, position vector shape, and `combined[b, t] = token_vectors[b, t] + position_vectors[t]`.
 - Passed Check 21: understood why the same token gets different combined vectors at different positions.
 - Corrected Check 22: understood same token and same position across different batch rows gives the same combined vector.
+- Corrected Check 23: understood `logits[b, t]` is a score vector over the vocabulary, not a token id.
+- Passed Check 24: interpreted the highest logit as the most preferred token id.
 
 ## Current Task
 

@@ -792,3 +792,53 @@ Status: corrected.
 Reason:
 
 Both positions contain token id `1`, so both token vectors come from `token_embedding.weight[1]`. Both are at position `t = 1`, so both add `position_vectors[1]`. The batch index `b` does not change the position vector.
+
+## Check 23: linear logits shape
+
+Setup:
+
+```python
+B = 4
+T = 8
+C = 16
+vocab_size = 10
+combined.shape = [B, T, C]
+lm_head = nn.Linear(C, vocab_size)
+logits = lm_head(combined)
+```
+
+Prediction:
+
+```text
+combined.shape = [4, 8, 16]
+logits.shape = [4, 8, 10]
+logits[2, 5].shape = [10]
+```
+
+Status: corrected.
+
+Reason:
+
+`logits[2, 5]` is not a token id. It is the vector of scores for all `vocab_size` possible next tokens at batch row `2`, time position `5`.
+
+## Check 24: interpreting logits scores
+
+Code:
+
+```python
+logits[0, 1] = torch.tensor([0.2, -1.0, 3.4, 0.5, 1.1])
+```
+
+Prediction:
+
+```text
+There are 5 scores.
+The highest score is 3.4 at index 2.
+The model most prefers token id 2.
+```
+
+Status: passed.
+
+Reason:
+
+Each index in the logits vector corresponds to one candidate token id. The highest score is the model's current strongest prediction.
