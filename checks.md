@@ -1310,3 +1310,29 @@ Status: corrected.
 Reason:
 
 Attention scores are scaled by `1 / sqrt(head_size)` to keep softmax from becoming too sharp when the key/query dimension is large.
+
+## Check 42: single attention head shapes
+
+Setup:
+
+```text
+x.shape = [2, 3, 4]
+head_size = 5
+```
+
+Answer:
+
+```text
+q.shape = [2, 3, 5]
+k.shape = [2, 3, 5]
+v.shape = [2, 3, 5]
+scores.shape = [2, 3, 3]
+weights.shape = [2, 3, 3]
+out.shape = [2, 3, 5]
+```
+
+Status: passed.
+
+Reason:
+
+The linear layers map the last dimension from `n_embd` to `head_size`. Attention scores and weights are pairwise time-to-time matrices `[B, T, T]`. The output keeps the value dimension `head_size`.
