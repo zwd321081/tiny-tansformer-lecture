@@ -1,0 +1,36 @@
+day06_causal_mask.py
+  79e6f52afb8140b7 1-23
+progress.md
+  79e6f52afb8140b7 9,69,105
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.2.8-ntes.9",
+  "base_commit_sha": "e9cc50d0682a2b0e28179e3d66e7b9874382b718",
+  "prompts": {
+    "79e6f52afb8140b7": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019ed99c-d490-7ca1-8433-946d8cf4b599",
+        "model": "gpt-5.5"
+      },
+      "human_author": "dongdongzhang",
+      "messages": [],
+      "total_additions": 26,
+      "total_deletions": 1,
+      "accepted_lines": 26,
+      "overriden_lines": 0,
+      "per_file_stats": {
+        "day06_causal_mask.py": {
+          "additions": 23,
+          "accepted_lines": 23
+        },
+        "progress.md": {
+          "additions": 3,
+          "deletions": 1,
+          "accepted_lines": 3
+        }
+      }
+    }
+  }
+}
