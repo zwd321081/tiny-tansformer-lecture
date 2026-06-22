@@ -1359,3 +1359,28 @@ Status: passed.
 Reason:
 
 Heads are concatenated along the last dimension, so the final dimension is `n_head * head_size`.
+
+## Check 44: multi-head projection shape
+
+Setup:
+
+```text
+x.shape = [4, 8, 32]
+num_heads = 4
+head_size = 10
+n_embd = 32
+```
+
+Answer:
+
+```text
+each head output = [4, 8, 10]
+concat output = [4, 8, 40]
+projection output = [4, 8, 32]
+```
+
+Status: passed.
+
+Reason:
+
+Projection maps `num_heads * head_size` back to `n_embd`, which is needed so `x + attention(x)` can work in a residual connection.

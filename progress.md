@@ -55,6 +55,7 @@ Stage 6: causal mask and attention prep.
 - Corrected Check 41: understood scores are divided by `sqrt(head_size)`.
 - Passed Check 42: understood single `Head` shape flow.
 - Passed Check 43: understood multi-head attention concatenates head outputs on the last dimension.
+- Passed Check 44: understood multi-head projection back to `n_embd` for residual connections.
 
 ## Current Task
 
