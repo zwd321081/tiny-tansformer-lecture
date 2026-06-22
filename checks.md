@@ -706,3 +706,35 @@ Status: passed.
 Reason:
 
 Coordinate `[1, 1]` contains token id `2`, so the embedding output at `[1, 1]` is row `2` of the embedding table.
+
+## Check 20: position embedding shapes
+
+Code:
+
+```python
+x = torch.tensor([
+    [2, 1, 0],
+    [0, 2, 1],
+])
+B, T = x.shape
+n_embd = 4
+positions = torch.arange(T)
+```
+
+Prediction:
+
+```text
+B = 2
+T = 3
+positions = [0, 1, 2]
+token_vectors.shape = [2, 3, 4]
+position_vectors.shape = [3, 4]
+combined.shape = [2, 3, 4]
+combined[1, 2] = token_vectors[1, 2] + position_vectors[2]
+```
+
+Status: corrected.
+
+Reason:
+
+`T` is the sequence length. `positions` is a 1D tensor of position ids `[0, 1, 2]`; after position embedding it becomes `[T, C]`.
