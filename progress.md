@@ -59,6 +59,7 @@ uv run python day04_softmax.py
 uv run python day04_cross_entropy.py
 uv run python day04_language_model_loss.py
 uv run python day05_bigram_model.py
+uv run python day05_bigram_train.py
 ```
 
 ## Next Step
@@ -92,6 +93,7 @@ Then understand:
 - how cross entropy compares logits against the target token id
 - how language model loss flattens `[B, T, V]` logits and `[B, T]` targets
 - how a Bigram model maps token ids directly to next-token logits
+- how `zero_grad`, `backward`, and `optimizer.step` reduce loss
 
 ## Notes For Next Session
 
