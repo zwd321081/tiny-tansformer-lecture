@@ -30,5 +30,5 @@ Please read /Users/zwd321081/Documents/cloudmusic/projects/tiny-transformer-lear
 Use `uv run` for PyTorch exercises:
 
 ```bash
-uv run python day02_tensor_shapes.py
+uv run python day02_01_tensor_shapes.py
 ```

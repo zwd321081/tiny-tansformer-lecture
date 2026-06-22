@@ -58,24 +58,24 @@ Stage 6: causal mask and attention prep.
 Run and understand the first Python exercises:
 
 ```bash
-python3 day01_python_basics.py
-python3 day01_next_char.py
-uv run python day02_tensor_shapes.py
-uv run python day02_batch.py
-uv run python day03_embedding.py
-uv run python day03_embedding_lookup.py
-uv run python day03_position_embedding.py
-uv run python day04_linear_logits.py
-uv run python day04_softmax.py
-uv run python day04_cross_entropy.py
-uv run python day04_language_model_loss.py
-uv run python day05_bigram_model.py
-uv run python day05_bigram_train.py
-uv run python day05_bigram_generate.py
-uv run python day06_causal_mask.py
-uv run python day06_weighted_values.py
-uv run python day06_qkv_attention.py
-uv run python day06_batched_attention.py
+python3 day01_01_python_basics.py
+python3 day01_02_next_char.py
+uv run python day02_01_tensor_shapes.py
+uv run python day02_02_batch.py
+uv run python day03_01_embedding.py
+uv run python day03_02_embedding_lookup.py
+uv run python day03_03_position_embedding.py
+uv run python day04_01_linear_logits.py
+uv run python day04_02_softmax.py
+uv run python day04_03_cross_entropy.py
+uv run python day04_04_language_model_loss.py
+uv run python day05_01_bigram_model.py
+uv run python day05_02_bigram_train.py
+uv run python day05_03_bigram_generate.py
+uv run python day06_01_causal_mask.py
+uv run python day06_02_weighted_values.py
+uv run python day06_03_qkv_attention.py
+uv run python day06_04_batched_attention.py
 ```
 
 ## Next Step
@@ -94,7 +94,7 @@ Then implement `encode` and `decode` with small changes by hand.
 
 Also continue using `checks.md` to verify understanding with prediction, code changes, and reverse explanation.
 
-After that, connect `day01_next_char.py` to numeric encoding, so training pairs become integer pairs.
+After that, connect `day01_02_next_char.py` to numeric encoding, so training pairs become integer pairs.
 
 Then understand:
 
