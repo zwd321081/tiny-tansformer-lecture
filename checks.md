@@ -1004,3 +1004,40 @@ Status: corrected.
 Reason:
 
 `logits[:, -1, :]` keeps all batch rows, selects the last time position, and keeps all vocabulary scores. Training uses all positions; generation only needs the last position to predict the next token.
+
+## Check 32: Bigram chain recap
+
+Setup:
+
+```python
+x = torch.tensor([
+    [1, 0, 2],
+    [2, 3, 1],
+])
+
+targets = torch.tensor([
+    [0, 2, 2],
+    [3, 1, 2],
+])
+
+logits.shape = [2, 3, 4]
+```
+
+Answer:
+
+```text
+B = 2
+T = 3
+V = 4
+x[1, 0] = input token id 2
+targets[1, 0] = correct next token id 3
+logits[1, 0] = score vector for all 4 candidate token ids at this position
+logits[1, 0].shape = [4]
+There are 6 prediction tasks.
+```
+
+Status: corrected.
+
+Reason:
+
+`logits[b, t]` is a vector over the vocabulary. A specific token score is `logits[b, t, token_id]`.
