@@ -49,6 +49,7 @@ Stage 6: causal mask and attention prep.
 - Corrected Check 35: understood `masked_scores` keeps score shape and original visible scores, replacing only masked positions with `-inf`.
 - Corrected Check 36: understood masked softmax weights and that softmax amplifies larger scores.
 - Corrected Check 37: understood `weights @ values` performs weighted sums row by row.
+- Corrected and passed Check 38: understood Q/K/V attention shapes.
 
 ## Current Task
 

@@ -1193,3 +1193,45 @@ Status: corrected.
 Reason:
 
 Each row first multiplies weights by values elementwise, then sums the row. Matrix multiplication `weights @ values` performs this weighted sum.
+
+## Check 38: Q/K/V attention shapes
+
+Question A:
+
+```text
+q.shape = [4, 8]
+k.shape = [4, 8]
+v.shape = [4, 8]
+```
+
+Expected:
+
+```text
+scores.shape = [4, 4]
+weights.shape = [4, 4]
+out.shape = [4, 8]
+```
+
+Status: corrected.
+
+Question B:
+
+```text
+q.shape = [3, 5]
+k.shape = [3, 5]
+v.shape = [3, 7]
+```
+
+Answer:
+
+```text
+scores.shape = [3, 3]
+weights.shape = [3, 3]
+out.shape = [3, 7]
+```
+
+Status: passed.
+
+Reason:
+
+`q @ k.T` creates pairwise position scores `[T, T]`. `weights @ v` aggregates values and returns `[T, value_dim]`.
