@@ -1,0 +1,35 @@
+day06_05_attention_head.py
+  79e6f52afb8140b7 1-41
+progress.md
+  79e6f52afb8140b7 80,120
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.2.8-ntes.9",
+  "base_commit_sha": "051ce1e35d6700ded36bd2aafc73ac68c8a4bf0b",
+  "prompts": {
+    "79e6f52afb8140b7": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019ed99c-d490-7ca1-8433-946d8cf4b599",
+        "model": "gpt-5.5"
+      },
+      "human_author": "dongdongzhang",
+      "messages": [],
+      "total_additions": 43,
+      "total_deletions": 0,
+      "accepted_lines": 43,
+      "overriden_lines": 0,
+      "per_file_stats": {
+        "day06_05_attention_head.py": {
+          "additions": 41,
+          "accepted_lines": 41
+        },
+        "progress.md": {
+          "additions": 2,
+          "accepted_lines": 2
+        }
+      }
+    }
+  }
+}
