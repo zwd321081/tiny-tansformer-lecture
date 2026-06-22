@@ -1064,3 +1064,47 @@ Status: passed.
 Reason:
 
 In a causal language model, each position can see itself and the past, but not future tokens.
+
+## Check 34: causal mask matrix
+
+Question A:
+
+```text
+If T = 3, what is the full causal mask?
+```
+
+Initial answer:
+
+```text
+[1, 1, 0]
+```
+
+Expected:
+
+```text
+[
+  [1, 0, 0],
+  [1, 1, 0],
+  [1, 1, 1],
+]
+```
+
+Status: corrected.
+
+Reason:
+
+The full mask has one row per position and one column per position, so for `T = 3` it is `3 x 3`.
+
+Question B:
+
+```text
+If T = 2, what is the full causal mask?
+```
+
+Answer:
+
+```text
+[[1, 0], [1, 1]]
+```
+
+Status: passed.

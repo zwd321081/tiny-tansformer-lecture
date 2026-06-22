@@ -45,6 +45,7 @@ Stage 5: bigram model basics.
 - Corrected Check 31: understood generation uses `logits[:, -1, :]` with shape `[B, V]`.
 - Corrected Check 32: understood `logits[b, t]` is a vocabulary score vector and `logits[b, t, token_id]` is one token's score.
 - Passed Check 33: understood causal visibility for self-attention.
+- Corrected and passed Check 34: understood causal mask is a full `T x T` matrix.
 
 ## Current Task
 
