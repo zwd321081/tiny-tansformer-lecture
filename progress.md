@@ -80,6 +80,7 @@ uv run python day06_02_weighted_values.py
 uv run python day06_03_qkv_attention.py
 uv run python day06_04_batched_attention.py
 uv run python day06_05_attention_head.py
+uv run python day06_06_multi_head_attention.py
 ```
 
 ## Next Step
@@ -120,6 +121,7 @@ Then understand:
 - how Q/K/V form minimal causal self-attention
 - how batched Q/K/V attention works on `[B, T, C]`
 - how to wrap single-head causal self-attention in a `Head` module
+- how multi-head attention concatenates several `Head` outputs
 
 ## Notes For Next Session
 
