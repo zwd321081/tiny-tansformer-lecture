@@ -40,6 +40,7 @@ Stage 5: bigram model basics.
 - Corrected Check 26: understood `target` stores the correct token id and cross entropy depends on the probability assigned to that correct token.
 - Passed Check 27: flattened `[B, T, V]` logits into `[B*T, V]` and `[B, T]` targets into `[B*T]` for loss.
 - Corrected Check 28: separated `B*T` prediction tasks from `V` candidate token scores.
+- Corrected Check 29: separated Bigram embedding table shape `[V, V]` from logits shape `[B, T, V]`.
 
 ## Current Task
 

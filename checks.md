@@ -939,3 +939,29 @@ Status: corrected.
 Reason:
 
 In `[B, T, V]`, `B*T` is the number of prediction tasks and `V` is the number of candidate token scores per task.
+
+## Check 29: Bigram embedding table and logits shape
+
+Setup:
+
+```python
+x.shape = [2, 3]
+vocab_size = 4
+token_embedding_table = nn.Embedding(vocab_size, vocab_size)
+logits = token_embedding_table(x)
+```
+
+Answer:
+
+```text
+token_embedding_table.weight.shape = [4, 4]
+logits.shape = [2, 3, 4]
+There are 6 prediction tasks.
+Each task has 4 candidate token scores.
+```
+
+Status: corrected.
+
+Reason:
+
+The embedding table shape is `[vocab_size, vocab_size]`. Applying it to `x` keeps the `[B, T]` positions and adds a final vocabulary-score dimension, producing `[B, T, vocab_size]`.
