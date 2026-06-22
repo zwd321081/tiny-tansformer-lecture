@@ -77,6 +77,7 @@ uv run python day06_01_causal_mask.py
 uv run python day06_02_weighted_values.py
 uv run python day06_03_qkv_attention.py
 uv run python day06_04_batched_attention.py
+uv run python day06_05_attention_head.py
 ```
 
 ## Next Step
@@ -116,6 +117,7 @@ Then understand:
 - how attention weights aggregate values with `weights @ values`
 - how Q/K/V form minimal causal self-attention
 - how batched Q/K/V attention works on `[B, T, C]`
+- how to wrap single-head causal self-attention in a `Head` module
 
 ## Notes For Next Session
 
