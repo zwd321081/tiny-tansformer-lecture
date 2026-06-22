@@ -6,7 +6,7 @@ Build Python and PyTorch foundations for learning Transformer from the top down.
 
 ## Current Stage
 
-Stage 3: embedding basics.
+Stage 4: linear logits basics.
 
 ## Completed
 
@@ -47,6 +47,7 @@ uv run python day02_batch.py
 uv run python day03_embedding.py
 uv run python day03_embedding_lookup.py
 uv run python day03_position_embedding.py
+uv run python day04_linear_logits.py
 ```
 
 ## Next Step
@@ -75,6 +76,7 @@ Then understand:
 - how `nn.Embedding` turns `[B, T]` token ids into `[B, T, C]` vectors
 - how `out[b, t] == embedding.weight[x[b, t]]`
 - how token embeddings and position embeddings are added
+- how `nn.Linear` turns `[B, T, C]` into `[B, T, vocab_size]` logits
 
 ## Notes For Next Session
 
