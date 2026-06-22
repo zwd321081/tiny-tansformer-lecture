@@ -30,6 +30,7 @@ Stage 3: embedding basics.
 - Passed Check 16: stacked multiple `[T]` samples into a `[B, T]` batch.
 - Corrected and passed Check 17: understood `nn.Embedding` table shape and output shape `[B, T, C]`.
 - Corrected Check 18: separated embedding coordinates from token ids with `out[b, t] == embedding.weight[x[b, t]]`.
+- Passed Check 19: verified embedding lookup at coordinate `[1, 1]`.
 
 ## Current Task
 

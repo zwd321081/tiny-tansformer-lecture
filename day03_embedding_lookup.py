@@ -3,16 +3,18 @@ import torch.nn as nn
 
 torch.manual_seed(1337)
 
-x = torch.tensor([
-    [2, 1],
-    [0, 2],
-])
+x = torch.tensor(
+    [
+        [2, 1],
+        [0, 2],
+    ]
+)
 
 embedding = nn.Embedding(3, 4)
 out = embedding(x)
 
-b = 0
-t = 0
+b = 1
+t = 1
 token_id = x[b, t]
 
 print("x:")

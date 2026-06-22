@@ -672,3 +672,37 @@ Core formula:
 ```python
 out[b, t] == embedding.weight[x[b, t]]
 ```
+
+## Check 19: verifying embedding lookup at a different coordinate
+
+Setup:
+
+```python
+x = torch.tensor([
+    [2, 1],
+    [0, 2],
+])
+b = 1
+t = 1
+```
+
+Prediction:
+
+```text
+x[1, 1] = tensor(2)
+out[1, 1] = embedding.weight[2]
+same = True
+```
+
+Observed result:
+
+```text
+x[b, t]: tensor(2)
+same: True
+```
+
+Status: passed.
+
+Reason:
+
+Coordinate `[1, 1]` contains token id `2`, so the embedding output at `[1, 1]` is row `2` of the embedding table.
