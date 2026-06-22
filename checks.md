@@ -914,3 +914,28 @@ Status: passed.
 Reason:
 
 Language model loss treats each `[b, t]` position as one prediction task. Flattening combines `B*T` positions while keeping the vocabulary dimension `V`.
+
+## Check 28: prediction tasks versus vocabulary scores
+
+Setup:
+
+```python
+x.shape = [2, 3]
+targets.shape = [2, 3]
+logits.shape = [2, 3, 4]
+```
+
+Answer:
+
+```text
+There are 6 prediction tasks.
+Each prediction task has 4 candidate token scores.
+logits[1, 2].shape = [4]
+target[1, 2] is the correct next token id at batch row 1, time position 2.
+```
+
+Status: corrected.
+
+Reason:
+
+In `[B, T, V]`, `B*T` is the number of prediction tasks and `V` is the number of candidate token scores per task.
