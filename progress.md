@@ -74,6 +74,7 @@ uv run python day05_bigram_generate.py
 uv run python day06_causal_mask.py
 uv run python day06_weighted_values.py
 uv run python day06_qkv_attention.py
+uv run python day06_batched_attention.py
 ```
 
 ## Next Step
@@ -112,6 +113,7 @@ Then understand:
 - how causal masks prevent positions from attending to future tokens
 - how attention weights aggregate values with `weights @ values`
 - how Q/K/V form minimal causal self-attention
+- how batched Q/K/V attention works on `[B, T, C]`
 
 ## Notes For Next Session
 
