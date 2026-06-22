@@ -37,6 +37,7 @@ Stage 4: linear logits basics.
 - Corrected Check 23: understood `logits[b, t]` is a score vector over the vocabulary, not a token id.
 - Passed Check 24: interpreted the highest logit as the most preferred token id.
 - Passed Check 25: understood softmax probabilities sum to 1 and preserve the highest-logit token as highest probability.
+- Corrected Check 26: understood `target` stores the correct token id and cross entropy depends on the probability assigned to that correct token.
 
 ## Current Task
 

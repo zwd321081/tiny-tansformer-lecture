@@ -865,3 +865,26 @@ Status: passed.
 Reason:
 
 The largest logit is `4.0` at index `1`, so token id `1` gets the highest softmax probability.
+
+## Check 26: cross entropy target token
+
+Code:
+
+```python
+logits = torch.tensor([[1.0, 4.0, 0.5]])
+target = torch.tensor([2])
+```
+
+Answer:
+
+```text
+The correct token id is 2.
+The model most prefers token id 1.
+The loss is large.
+```
+
+Status: corrected.
+
+Reason:
+
+The candidate token ids are `0`, `1`, and `2`, but `target[0] = 2` selects token id `2` as the correct answer. Cross entropy is large because the model gives the correct token a low score and therefore a low probability.
