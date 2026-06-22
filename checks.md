@@ -1260,3 +1260,30 @@ Status: passed.
 Reason:
 
 The sequence length is `T = 5`, so scores, mask, and weights are `[T, T]`. The output keeps the sequence length and value dimension, `[T, value_dim]`.
+
+## Check 40: batched Q/K/V attention shapes
+
+Setup:
+
+```text
+x.shape = [4, 8, 16]
+head_size = 32
+```
+
+Answer:
+
+```text
+q.shape = [4, 8, 32]
+k.shape = [4, 8, 32]
+v.shape = [4, 8, 32]
+scores.shape = [4, 8, 8]
+weights.shape = [4, 8, 8]
+out.shape = [4, 8, 32]
+mask.shape = [8, 8]
+```
+
+Status: corrected.
+
+Reason:
+
+`out = weights @ v` keeps the value dimension, so the last dimension is `head_size`. The causal mask only describes time-to-time visibility, so it is `[T, T]`.
