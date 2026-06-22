@@ -72,6 +72,7 @@ uv run python day05_bigram_train.py
 uv run python day05_bigram_generate.py
 uv run python day06_causal_mask.py
 uv run python day06_weighted_values.py
+uv run python day06_qkv_attention.py
 ```
 
 ## Next Step
@@ -109,6 +110,7 @@ Then understand:
 - how a language model generates one token at a time
 - how causal masks prevent positions from attending to future tokens
 - how attention weights aggregate values with `weights @ values`
+- how Q/K/V form minimal causal self-attention
 
 ## Notes For Next Session
 
