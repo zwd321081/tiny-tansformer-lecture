@@ -36,6 +36,7 @@ Stage 4: linear logits basics.
 - Corrected Check 22: understood same token and same position across different batch rows gives the same combined vector.
 - Corrected Check 23: understood `logits[b, t]` is a score vector over the vocabulary, not a token id.
 - Passed Check 24: interpreted the highest logit as the most preferred token id.
+- Passed Check 25: understood softmax probabilities sum to 1 and preserve the highest-logit token as highest probability.
 
 ## Current Task
 
@@ -51,6 +52,7 @@ uv run python day03_embedding_lookup.py
 uv run python day03_position_embedding.py
 uv run python day04_linear_logits.py
 uv run python day04_softmax.py
+uv run python day04_cross_entropy.py
 ```
 
 ## Next Step
@@ -81,6 +83,7 @@ Then understand:
 - how token embeddings and position embeddings are added
 - how `nn.Linear` turns `[B, T, C]` into `[B, T, vocab_size]` logits
 - how softmax turns logits into probabilities
+- how cross entropy compares logits against the target token id
 
 ## Notes For Next Session
 

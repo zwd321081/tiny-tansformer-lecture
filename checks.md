@@ -842,3 +842,26 @@ Status: passed.
 Reason:
 
 Each index in the logits vector corresponds to one candidate token id. The highest score is the model's current strongest prediction.
+
+## Check 25: softmax probabilities
+
+Code:
+
+```python
+logits = torch.tensor([1.0, 4.0, 0.5])
+probs = softmax(logits)
+```
+
+Prediction:
+
+```text
+probs has 3 numbers.
+probs sums to 1.
+token id 1 has the highest probability.
+```
+
+Status: passed.
+
+Reason:
+
+The largest logit is `4.0` at index `1`, so token id `1` gets the highest softmax probability.
