@@ -6,7 +6,7 @@ Build Python and PyTorch foundations for learning Transformer from the top down.
 
 ## Current Stage
 
-Stage 6: causal mask and attention prep.
+Stage 6: restart Transformer from attention fundamentals.
 
 ## Completed
 
@@ -44,22 +44,10 @@ Stage 6: causal mask and attention prep.
 - Passed Check 30: observed Bigram loss decreasing and weights changing after training.
 - Corrected Check 31: understood generation uses `logits[:, -1, :]` with shape `[B, V]`.
 - Corrected Check 32: understood `logits[b, t]` is a vocabulary score vector and `logits[b, t, token_id]` is one token's score.
-- Passed Check 33: understood causal visibility for self-attention.
-- Corrected and passed Check 34: understood causal mask is a full `T x T` matrix.
-- Corrected Check 35: understood `masked_scores` keeps score shape and original visible scores, replacing only masked positions with `-inf`.
-- Corrected Check 36: understood masked softmax weights and that softmax amplifies larger scores.
-- Corrected Check 37: understood `weights @ values` performs weighted sums row by row.
-- Corrected and passed Check 38: understood Q/K/V attention shapes.
-- Passed Check 39: understood the minimal Q/K/V attention chain shapes.
-- Corrected Check 40: understood batched Q/K/V shapes, value dimension in `out`, and mask shape `[T, T]`.
-- Corrected Check 41: understood scores are divided by `sqrt(head_size)`.
-- Passed Check 42: understood single `Head` shape flow.
-- Passed Check 43: understood multi-head attention concatenates head outputs on the last dimension.
-- Passed Check 44: understood multi-head projection back to `n_embd` for residual connections.
 
 ## Current Task
 
-Run and understand the first Python exercises:
+Restart Transformer learning from Day 6. Keep Day 1-5 as completed foundation:
 
 ```bash
 python3 day01_01_python_basics.py
@@ -76,54 +64,22 @@ uv run python day04_04_language_model_loss.py
 uv run python day05_01_bigram_model.py
 uv run python day05_02_bigram_train.py
 uv run python day05_03_bigram_generate.py
-uv run python day06_01_causal_mask.py
-uv run python day06_02_weighted_values.py
-uv run python day06_03_qkv_attention.py
-uv run python day06_04_batched_attention.py
-uv run python day06_05_attention_head.py
-uv run python day06_06_multi_head_attention.py
 ```
 
 ## Next Step
 
-Understand these Python concepts from the first exercise:
+Rebuild Day 6 as the Transformer starting point:
 
-- string
-- `set`
-- `list`
-- `sorted`
-- `dict`
-- function
-- `for` loop
+1. Explain why Bigram is not enough and why context is needed.
+2. Relearn causal visibility: each position can see itself and the past, not the future.
+3. Build causal mask from scratch.
+4. Understand attention as weighted averaging.
+5. Introduce Q/K/V only after mask and weighted averaging are clear.
+6. Build single-head causal self-attention slowly.
+7. Then build multi-head attention and projection.
 
-Then implement `encode` and `decode` with small changes by hand.
-
-Also continue using `checks.md` to verify understanding with prediction, code changes, and reverse explanation.
-
-After that, connect `day01_02_next_char.py` to numeric encoding, so training pairs become integer pairs.
-
-Then understand:
-
-- how a Python list becomes a `torch.tensor`
-- what `shape` means
-- how 1D and 2D tensors are indexed
-- how `nn.Embedding` turns `[B, T]` token ids into `[B, T, C]` vectors
-- how `out[b, t] == embedding.weight[x[b, t]]`
-- how token embeddings and position embeddings are added
-- how `nn.Linear` turns `[B, T, C]` into `[B, T, vocab_size]` logits
-- how softmax turns logits into probabilities
-- how cross entropy compares logits against the target token id
-- how language model loss flattens `[B, T, V]` logits and `[B, T]` targets
-- how a Bigram model maps token ids directly to next-token logits
-- how `zero_grad`, `backward`, and `optimizer.step` reduce loss
-- how a language model generates one token at a time
-- how causal masks prevent positions from attending to future tokens
-- how attention weights aggregate values with `weights @ values`
-- how Q/K/V form minimal causal self-attention
-- how batched Q/K/V attention works on `[B, T, C]`
-- how to wrap single-head causal self-attention in a `Head` module
-- how multi-head attention concatenates several `Head` outputs
+Do not continue to Transformer Block until Day 6 attention is rebuilt cleanly.
 
 ## Notes For Next Session
 
-Continue slowly. The learner is new to Python and PyTorch, so explain in small chunks and avoid giving full Transformer code.
+Day 6 is intentionally reset. Continue slowly from Transformer/attention fundamentals. Existing `day06_*.py` files may be used as reference, but new learning should rebuild the ideas in order instead of assuming the prior Day 6 progress is mastered.
