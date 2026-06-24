@@ -1042,6 +1042,35 @@ Reason:
 
 `logits[b, t]` is a vector over the vocabulary. A specific token score is `logits[b, t, token_id]`.
 
+## Restarted Day 6: Transformer Attention
+
+Day 6 was reset in `progress.md` to relearn Transformer attention from fundamentals.
+
+## Check R6-01: causal visibility and mask
+
+Question:
+
+```text
+If T = 4, what is the full causal mask?
+```
+
+Answer:
+
+```text
+[
+  [1, 0, 0, 0],
+  [1, 1, 0, 0],
+  [1, 1, 1, 0],
+  [1, 1, 1, 1],
+]
+```
+
+Status: passed.
+
+Reason:
+
+In a causal language model, position `t` can see positions `0..t`, and cannot see future positions.
+
 ## Check 33: causal visibility
 
 Setup:

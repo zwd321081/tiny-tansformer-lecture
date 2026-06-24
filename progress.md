@@ -44,6 +44,8 @@ Stage 6: restart Transformer from attention fundamentals.
 - Passed Check 30: observed Bigram loss decreasing and weights changing after training.
 - Corrected Check 31: understood generation uses `logits[:, -1, :]` with shape `[B, V]`.
 - Corrected Check 32: understood `logits[b, t]` is a vocabulary score vector and `logits[b, t, token_id]` is one token's score.
+- Restarted Day 6 from Transformer attention fundamentals.
+- Passed Check R6-01: causal visibility and full `T = 4` mask.
 
 ## Current Task
 
