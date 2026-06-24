@@ -1,0 +1,26 @@
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.2.8-ntes.9",
+  "base_commit_sha": "220ef18f21c358f37e176daa23c0e20d93700ae3",
+  "prompts": {
+    "372d40d7ed776a04": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019ef9a3-6409-7a22-9cd4-26291f1674b8",
+        "model": "gpt-5.5"
+      },
+      "human_author": "dongdongzhang",
+      "messages": [],
+      "total_additions": 0,
+      "total_deletions": 343,
+      "accepted_lines": 0,
+      "overriden_lines": 0,
+      "per_file_stats": {
+        "checks.md": {
+          "deletions": 343
+        }
+      }
+    }
+  }
+}
