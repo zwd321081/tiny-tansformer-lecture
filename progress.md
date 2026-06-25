@@ -46,6 +46,10 @@ Stage 6: restart Transformer from attention fundamentals.
 - Corrected Check 32: understood `logits[b, t]` is a vocabulary score vector and `logits[b, t, token_id]` is one token's score.
 - Restarted Day 6 from Transformer attention fundamentals.
 - Passed Check R6-01: causal visibility and full `T = 4` mask.
+- Corrected and passed Check R6-02: predicted `scores`, `mask`, `masked_scores`, and softmax `weights` for `day06_01_causal_mask.py`.
+- Passed Check R6-03: predicted and verified `out = weights @ values` in `day06_02_weighted_values.py`.
+- Passed Check R6-04: connected `causal_weights @ causal_values` to context mixing and understood why future values must not affect earlier outputs.
+- Corrected and passed Check R6-05: understood why `scores = q @ k.T` gives a `[T, T]` query-key matching table.
 
 ## Current Task
 
@@ -75,8 +79,8 @@ Rebuild Day 6 as the Transformer starting point:
 1. Explain why Bigram is not enough and why context is needed.
 2. Relearn causal visibility: each position can see itself and the past, not the future.
 3. Build causal mask from scratch.
-4. Understand attention as weighted averaging.
-5. Introduce Q/K/V only after mask and weighted averaging are clear.
+4. Created `day06_02_weighted_values.py` and understood attention as weighted averaging.
+5. Introduce Q/K by creating `day06_03_qk_scores.py` to show how attention scores are produced.
 6. Build single-head causal self-attention slowly.
 7. Then build multi-head attention and projection.
 
@@ -84,4 +88,4 @@ Do not continue to Transformer Block until Day 6 attention is rebuilt cleanly.
 
 ## Notes For Next Session
 
-Day 6 is intentionally reset. Continue slowly from Transformer/attention fundamentals. Existing `day06_*.py` files may be used as reference, but new learning should rebuild the ideas in order instead of assuming the prior Day 6 progress is mastered.
+Day 6 is intentionally reset. Continue slowly from Transformer/attention fundamentals. The old `day06_02` through `day06_06` reference files were deleted so the concepts can be rebuilt in order instead of assumed.
