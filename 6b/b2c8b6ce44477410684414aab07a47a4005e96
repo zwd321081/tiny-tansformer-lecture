@@ -1,0 +1,79 @@
+day06_05_qkv_attention.py
+  447c3fef1dd3c604 1-47
+day06_08_batched_attention.py
+  447c3fef1dd3c604 1-43
+day06_06_qkv_from_x.py
+  447c3fef1dd3c604 1-27
+progress.md
+  447c3fef1dd3c604 53-60,91-100
+day06_04_masked_attention_weights.py
+  447c3fef1dd3c604 1-39
+day06_09_attention_head.py
+  447c3fef1dd3c604 1-44
+day06_10_multi_head_attention.py
+  447c3fef1dd3c604 1-52
+day06_07_single_head_attention.py
+  447c3fef1dd3c604 1-40
+day06_11_multi_head_module.py
+  447c3fef1dd3c604 1-57
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.2.8-ntes.9",
+  "base_commit_sha": "6bb2c8b6ce44477410684414aab07a47a4005e96",
+  "prompts": {
+    "447c3fef1dd3c604": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019ef9a7-ece8-7300-a0cc-d72ac47caf2c",
+        "model": "gpt-5.5"
+      },
+      "human_author": "dongdongzhang",
+      "messages": [],
+      "total_additions": 375,
+      "total_deletions": 11,
+      "accepted_lines": 367,
+      "overriden_lines": 0,
+      "per_file_stats": {
+        "day06_05_qkv_attention.py": {
+          "additions": 47,
+          "accepted_lines": 47
+        },
+        "day06_10_multi_head_attention.py": {
+          "additions": 55,
+          "deletions": 3,
+          "accepted_lines": 52
+        },
+        "day06_06_qkv_from_x.py": {
+          "additions": 27,
+          "accepted_lines": 27
+        },
+        "day06_09_attention_head.py": {
+          "additions": 44,
+          "accepted_lines": 44
+        },
+        "progress.md": {
+          "additions": 23,
+          "deletions": 8,
+          "accepted_lines": 18
+        },
+        "day06_08_batched_attention.py": {
+          "additions": 43,
+          "accepted_lines": 43
+        },
+        "day06_11_multi_head_module.py": {
+          "additions": 57,
+          "accepted_lines": 57
+        },
+        "day06_04_masked_attention_weights.py": {
+          "additions": 39,
+          "accepted_lines": 39
+        },
+        "day06_07_single_head_attention.py": {
+          "additions": 40,
+          "accepted_lines": 40
+        }
+      }
+    }
+  }
+}
