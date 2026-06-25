@@ -50,6 +50,14 @@ Stage 6: restart Transformer from attention fundamentals.
 - Passed Check R6-03: predicted and verified `out = weights @ values` in `day06_02_weighted_values.py`.
 - Passed Check R6-04: connected `causal_weights @ causal_values` to context mixing and understood why future values must not affect earlier outputs.
 - Corrected and passed Check R6-05: understood why `scores = q @ k.T` gives a `[T, T]` query-key matching table.
+- Passed Check R6-06: predicted masked Q/K scores and interpreted softmax attention weights in `day06_04_masked_attention_weights.py`.
+- Passed Check R6-07: understood `out = weights @ v` as the self-attention output, a context-mixed representation used before logits.
+- Corrected and passed Check R6-08: understood PyTorch `nn.Linear(n_embd, head_size)` stores weight as `[head_size, n_embd]` and produces Q/K/V shape `[T, head_size]`.
+- Passed Check R6-09: assembled minimal single-head causal self-attention from `x -> q/k/v -> scores -> weights -> out`.
+- Corrected and passed Check R6-10: added batch dimension and understood batched attention shapes `[B, T, head_size] @ [B, head_size, T] -> [B, T, T]`.
+- Passed Check R6-11: wrapped batched causal self-attention into a reusable `Head` module with output shape `[B, T, head_size]`.
+- Corrected and passed Check R6-12: understood multi-head concat shape `[B, T, num_heads * head_size]` and projection back to `[B, T, n_embd]`.
+- Passed Check R6-13: wrapped multi-head causal self-attention into a reusable `MultiHeadAttention` module.
 
 ## Current Task
 
@@ -80,9 +88,16 @@ Rebuild Day 6 as the Transformer starting point:
 2. Relearn causal visibility: each position can see itself and the past, not the future.
 3. Build causal mask from scratch.
 4. Created `day06_02_weighted_values.py` and understood attention as weighted averaging.
-5. Introduce Q/K by creating `day06_03_qk_scores.py` to show how attention scores are produced.
-6. Build single-head causal self-attention slowly.
-7. Then build multi-head attention and projection.
+5. Created `day06_03_qk_scores.py` to show how attention scores are produced.
+6. Created `day06_04_masked_attention_weights.py` to turn masked Q/K scores into attention weights.
+7. Created `day06_05_qkv_attention.py` to combine weights with V values and produce attention output.
+8. Created `day06_06_qkv_from_x.py` to produce Q/K/V from input `x`.
+9. Created `day06_07_single_head_attention.py` as a minimal no-batch single-head causal self-attention.
+10. Created `day06_08_batched_attention.py` and understood `[B, T, C]` attention shapes.
+11. Created `day06_09_attention_head.py` and wrapped batched causal self-attention into a reusable `Head` module.
+12. Created `day06_10_multi_head_attention.py` to concatenate several heads and project back to `n_embd`.
+13. Created `day06_11_multi_head_module.py` as a reusable `MultiHeadAttention` module.
+14. Next, review Day 6 attention end-to-end before moving to Transformer Block.
 
 Do not continue to Transformer Block until Day 6 attention is rebuilt cleanly.
 
