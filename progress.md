@@ -6,7 +6,7 @@ Build Python and PyTorch foundations for learning Transformer from the top down.
 
 ## Current Stage
 
-Stage 6: restart Transformer from attention fundamentals.
+Stage 7: build Transformer Block from residual connection upward.
 
 ## Completed
 
@@ -58,10 +58,17 @@ Stage 6: restart Transformer from attention fundamentals.
 - Passed Check R6-11: wrapped batched causal self-attention into a reusable `Head` module with output shape `[B, T, head_size]`.
 - Corrected and passed Check R6-12: understood multi-head concat shape `[B, T, num_heads * head_size]` and projection back to `[B, T, n_embd]`.
 - Passed Check R6-13: wrapped multi-head causal self-attention into a reusable `MultiHeadAttention` module.
+- Passed Check R7-01: understood residual connection as element-wise addition of original `x` and `attention_out`, preserving original token information while adding context.
+- Passed Check R7-02: connected residual connection to real `MultiHeadAttention` with `x + attention_out` preserving shape `[B, T, n_embd]`.
+- Passed Check R7-03: understood LayerNorm as normalizing the last `n_embd` dimension while preserving shape.
+- Passed Check R7-04: understood pre-norm attention as `x + attention(layer_norm(x))`, using original `x` for residual addition.
+- Passed Check R7-05: understood FeedForward as per-token expansion to `4 * n_embd` and projection back to `n_embd`.
+- Passed Check R7-06: understood pre-norm FeedForward as `x + feed_forward(layer_norm(x))`, preserving original information with residual addition.
+- Passed Check R7-07: assembled a minimal pre-norm Transformer Block that preserves `[B, T, n_embd]` so blocks can be stacked.
 
 ## Current Task
 
-Restart Transformer learning from Day 6. Keep Day 1-5 as completed foundation:
+Build Day 7 Transformer Block pieces slowly. Keep Day 1-6 as completed foundation:
 
 ```bash
 python3 day01_01_python_basics.py
@@ -82,25 +89,19 @@ uv run python day05_03_bigram_generate.py
 
 ## Next Step
 
-Rebuild Day 6 as the Transformer starting point:
+Build Day 7 as the Transformer Block starting point:
 
-1. Explain why Bigram is not enough and why context is needed.
-2. Relearn causal visibility: each position can see itself and the past, not the future.
-3. Build causal mask from scratch.
-4. Created `day06_02_weighted_values.py` and understood attention as weighted averaging.
-5. Created `day06_03_qk_scores.py` to show how attention scores are produced.
-6. Created `day06_04_masked_attention_weights.py` to turn masked Q/K scores into attention weights.
-7. Created `day06_05_qkv_attention.py` to combine weights with V values and produce attention output.
-8. Created `day06_06_qkv_from_x.py` to produce Q/K/V from input `x`.
-9. Created `day06_07_single_head_attention.py` as a minimal no-batch single-head causal self-attention.
-10. Created `day06_08_batched_attention.py` and understood `[B, T, C]` attention shapes.
-11. Created `day06_09_attention_head.py` and wrapped batched causal self-attention into a reusable `Head` module.
-12. Created `day06_10_multi_head_attention.py` to concatenate several heads and project back to `n_embd`.
-13. Created `day06_11_multi_head_module.py` as a reusable `MultiHeadAttention` module.
-14. Next, review Day 6 attention end-to-end before moving to Transformer Block.
+1. Created `day07_01_residual_connection.py` and understood `x + attention_out`.
+2. Created `day07_02_attention_residual.py` and connected residual connection to the real `MultiHeadAttention` module.
+3. Created `day07_03_layer_norm.py` and understood LayerNorm over the last `n_embd` dimension.
+4. Created `day07_04_prenorm_attention.py` and connected LayerNorm, attention, and residual addition.
+5. Created `day07_05_feed_forward.py` and understood FeedForward shape preservation.
+6. Created `day07_06_prenorm_feed_forward.py` and connected FeedForward with LayerNorm and residual addition.
+7. Created `day07_07_transformer_block.py` and assembled a minimal Transformer Block.
+8. Next, review Day 7 Transformer Block end-to-end before integrating it into a language model.
 
-Do not continue to Transformer Block until Day 6 attention is rebuilt cleanly.
+Do not continue to full language model integration until Transformer Block pieces are clear.
 
 ## Notes For Next Session
 
-Day 6 is intentionally reset. Continue slowly from Transformer/attention fundamentals. The old `day06_02` through `day06_06` reference files were deleted so the concepts can be rebuilt in order instead of assumed.
+Day 6 attention is rebuilt through `MultiHeadAttention`. Continue Day 7 slowly from residual connection, then LayerNorm, FeedForward, and Transformer Block assembly.
