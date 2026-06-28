@@ -1,0 +1,54 @@
+day08_01_transformer_logits.py
+  447c3fef1dd3c604 1-105
+progress.md
+  447c3fef1dd3c604 9,68-71,75,96,98-102,104,108
+day08_02_transformer_loss.py
+  447c3fef1dd3c604 1-116
+day08_03_transformer_train.py
+  447c3fef1dd3c604 1-133
+day08_04_transformer_generate.py
+  447c3fef1dd3c604 1-151
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.2.8-ntes.9",
+  "base_commit_sha": "f3c4c7d740dd5b8fe7b5b1d709a143f31fa9470e",
+  "prompts": {
+    "447c3fef1dd3c604": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019ef9a7-ece8-7300-a0cc-d72ac47caf2c",
+        "model": "gpt-5.5"
+      },
+      "human_author": "dongdongzhang",
+      "messages": [],
+      "total_additions": 519,
+      "total_deletions": 13,
+      "accepted_lines": 519,
+      "overriden_lines": 0,
+      "per_file_stats": {
+        "progress.md": {
+          "additions": 14,
+          "deletions": 13,
+          "accepted_lines": 14
+        },
+        "day08_01_transformer_logits.py": {
+          "additions": 105,
+          "accepted_lines": 105
+        },
+        "day08_04_transformer_generate.py": {
+          "additions": 151,
+          "accepted_lines": 151
+        },
+        "day08_03_transformer_train.py": {
+          "additions": 133,
+          "accepted_lines": 133
+        },
+        "day08_02_transformer_loss.py": {
+          "additions": 116,
+          "accepted_lines": 116
+        }
+      }
+    }
+  }
+}
