@@ -1,0 +1,72 @@
+day07_02_attention_residual.py
+  447c3fef1dd3c604 1-60
+day07_01_residual_connection.py
+  447c3fef1dd3c604 1-26
+day07_06_prenorm_feed_forward.py
+  447c3fef1dd3c604 1-27
+day07_05_feed_forward.py
+  447c3fef1dd3c604 1-23
+progress.md
+  447c3fef1dd3c604 9,61-67,71,92,94-101,103,107
+day07_03_layer_norm.py
+  447c3fef1dd3c604 1-34
+day07_04_prenorm_attention.py
+  447c3fef1dd3c604 1-63
+day07_07_transformer_block.py
+  447c3fef1dd3c604 1-86
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.2.8-ntes.9",
+  "base_commit_sha": "efcb0891fa2bf0bbbbd398cb9fef0ed966b15064",
+  "prompts": {
+    "447c3fef1dd3c604": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019ef9a7-ece8-7300-a0cc-d72ac47caf2c",
+        "model": "gpt-5.5"
+      },
+      "human_author": "dongdongzhang",
+      "messages": [],
+      "total_additions": 351,
+      "total_deletions": 31,
+      "accepted_lines": 341,
+      "overriden_lines": 0,
+      "per_file_stats": {
+        "day07_06_prenorm_feed_forward.py": {
+          "additions": 27,
+          "accepted_lines": 27
+        },
+        "day07_07_transformer_block.py": {
+          "additions": 86,
+          "accepted_lines": 86
+        },
+        "day07_03_layer_norm.py": {
+          "additions": 34,
+          "accepted_lines": 34
+        },
+        "progress.md": {
+          "additions": 32,
+          "deletions": 31,
+          "accepted_lines": 22
+        },
+        "day07_04_prenorm_attention.py": {
+          "additions": 63,
+          "accepted_lines": 63
+        },
+        "day07_01_residual_connection.py": {
+          "additions": 26,
+          "accepted_lines": 26
+        },
+        "day07_05_feed_forward.py": {
+          "additions": 23,
+          "accepted_lines": 23
+        },
+        "day07_02_attention_residual.py": {
+          "additions": 60,
+          "accepted_lines": 60
+        }
+      }
+    }
+  }
+}
