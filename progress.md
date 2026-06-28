@@ -6,7 +6,7 @@ Build Python and PyTorch foundations for learning Transformer from the top down.
 
 ## Current Stage
 
-Stage 7: build Transformer Block from residual connection upward.
+Stage 8: integrate Transformer Block into a tiny language model.
 
 ## Completed
 
@@ -65,10 +65,14 @@ Stage 7: build Transformer Block from residual connection upward.
 - Passed Check R7-05: understood FeedForward as per-token expansion to `4 * n_embd` and projection back to `n_embd`.
 - Passed Check R7-06: understood pre-norm FeedForward as `x + feed_forward(layer_norm(x))`, preserving original information with residual addition.
 - Passed Check R7-07: assembled a minimal pre-norm Transformer Block that preserves `[B, T, n_embd]` so blocks can be stacked.
+- Passed Check R8-01: connected token and position embeddings through a Transformer Block, final LayerNorm, and `lm_head` to produce logits shape `[B, T, vocab_size]`.
+- Passed Check R8-02: flattened Transformer logits and targets for cross entropy loss as `[B*T, vocab_size]` and `[B*T]`.
+- Passed Check R8-03: trained a tiny Transformer language model and observed loss decrease.
+- Passed Check R8-04: added generation using `logits[:, -1, :]` and understood generated sequence length growth.
 
 ## Current Task
 
-Build Day 7 Transformer Block pieces slowly. Keep Day 1-6 as completed foundation:
+Build Day 8 tiny Transformer language model integration. Keep Day 1-7 as completed foundation:
 
 ```bash
 python3 day01_01_python_basics.py
@@ -89,19 +93,16 @@ uv run python day05_03_bigram_generate.py
 
 ## Next Step
 
-Build Day 7 as the Transformer Block starting point:
+Build Day 8 as the tiny Transformer language model integration:
 
-1. Created `day07_01_residual_connection.py` and understood `x + attention_out`.
-2. Created `day07_02_attention_residual.py` and connected residual connection to the real `MultiHeadAttention` module.
-3. Created `day07_03_layer_norm.py` and understood LayerNorm over the last `n_embd` dimension.
-4. Created `day07_04_prenorm_attention.py` and connected LayerNorm, attention, and residual addition.
-5. Created `day07_05_feed_forward.py` and understood FeedForward shape preservation.
-6. Created `day07_06_prenorm_feed_forward.py` and connected FeedForward with LayerNorm and residual addition.
-7. Created `day07_07_transformer_block.py` and assembled a minimal Transformer Block.
-8. Next, review Day 7 Transformer Block end-to-end before integrating it into a language model.
+1. Created `day08_01_transformer_logits.py` and connected Transformer Block to logits.
+2. Created `day08_02_transformer_loss.py` and connected logits to cross entropy loss.
+3. Created `day08_03_transformer_train.py` and verified training loss decreases.
+4. Created `day08_04_transformer_generate.py` and verified generation from a start token.
+5. Next, move from toy tensors to real text data batches.
 
-Do not continue to full language model integration until Transformer Block pieces are clear.
+Do not continue to larger training until real text batching is clear.
 
 ## Notes For Next Session
 
-Day 6 attention is rebuilt through `MultiHeadAttention`. Continue Day 7 slowly from residual connection, then LayerNorm, FeedForward, and Transformer Block assembly.
+Day 8 tiny Transformer LM works on toy tensors. Continue by reconnecting Day 1-5 text encoding and batching to train on real character data.
