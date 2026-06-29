@@ -6,7 +6,7 @@ Build Python and PyTorch foundations for learning Transformer from the top down.
 
 ## Current Stage
 
-Stage 8: integrate Transformer Block into a tiny language model.
+Stage 9: train tiny Transformer on real text batches.
 
 ## Completed
 
@@ -69,10 +69,14 @@ Stage 8: integrate Transformer Block into a tiny language model.
 - Passed Check R8-02: flattened Transformer logits and targets for cross entropy loss as `[B*T, vocab_size]` and `[B*T]`.
 - Passed Check R8-03: trained a tiny Transformer language model and observed loss decrease.
 - Passed Check R8-04: added generation using `logits[:, -1, :]` and understood generated sequence length growth.
+- Passed Check R9-01: encoded real text into token ids and built next-token `x = data[:-1]`, `y = data[1:]` pairs.
+- Passed Check R9-02: built `get_batch()` to sample `[batch_size, block_size]` input and target batches from text data.
+- Passed Check R9-03: trained the tiny Transformer on real text batches and observed loss decrease.
+- Corrected and passed Check R9-04: generated token ids from a start character and decoded them back into text.
 
 ## Current Task
 
-Build Day 8 tiny Transformer language model integration. Keep Day 1-7 as completed foundation:
+Build Day 9 real text batching and generation. Keep Day 1-8 as completed foundation:
 
 ```bash
 python3 day01_01_python_basics.py
@@ -93,16 +97,16 @@ uv run python day05_03_bigram_generate.py
 
 ## Next Step
 
-Build Day 8 as the tiny Transformer language model integration:
+Build Day 9 as the real text training bridge:
 
-1. Created `day08_01_transformer_logits.py` and connected Transformer Block to logits.
-2. Created `day08_02_transformer_loss.py` and connected logits to cross entropy loss.
-3. Created `day08_03_transformer_train.py` and verified training loss decreases.
-4. Created `day08_04_transformer_generate.py` and verified generation from a start token.
-5. Next, move from toy tensors to real text data batches.
+1. Created `day09_01_text_data.py` and encoded real text into token ids.
+2. Created `day09_02_get_batch.py` and sampled text training batches.
+3. Created `day09_03_train_on_text_batch.py` and trained on real text batches.
+4. Created `day09_04_generate_text.py` and decoded generated token ids back into text.
+5. Next, move from tiny inline text to a reusable training script with train/val split and evaluation.
 
-Do not continue to larger training until real text batching is clear.
+Do not continue to larger data until train/val split and evaluation are clear.
 
 ## Notes For Next Session
 
-Day 8 tiny Transformer LM works on toy tensors. Continue by reconnecting Day 1-5 text encoding and batching to train on real character data.
+Day 9 tiny Transformer trains and generates from inline character text. Continue by introducing train/val split, `estimate_loss`, and a reusable training loop.
